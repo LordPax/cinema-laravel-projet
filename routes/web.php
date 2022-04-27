@@ -23,7 +23,11 @@ Route::get('/dashboard',
 )->middleware(['auth'])->name('dashboard');
 
 Route::get('/showFilm/{id}',
-    [CinemaController::class, 'film']
+    [CinemaController::class, 'showFilm']
 )->middleware(['auth'])->name('showfilm');
+
+Route::get('/showFilmsByGenre/{id}',
+    [CinemaController::class, 'showFilmsByGenre']
+)->middleware(['auth'])->name('showfilmsbygenre');
 
 require __DIR__.'/auth.php';
